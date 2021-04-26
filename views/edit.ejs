@@ -1,0 +1,40 @@
+<%-include("partials/header")%>
+<!-- Header -->
+	<header id="header" class="alt slideshow" style="min-height: 64vh">
+		<div class="inner">
+			<img src="https://1.bp.blogspot.com/-i0cwBbkLKdo/YCwUxFEZaiI/AAAAAAAAAlY/_zgaK92z0Zsalfz00eLVwtzTuB0YTUdnQCLcBGAsYHQ/w400-h203/logo2.png" alt="" />
+			<h1></h1>
+		</div>
+	</header>
+
+<!-- Wrapper -->
+	<div id="wrapper">
+		<section id="main" class="main">
+			<header>
+				<h2>Edit Painting Post</h2>
+			</header>
+			<form action="/painting/<%=painting._id%>?_method=PUT" method="POST">
+				<input type="text" name="name" placeholder="name" value="<%=painting.name%>"><br>
+				<!-- <input type="text" name="image" placeholder="image"><br> -->
+				<!-- <input type="file" name="image" placeholder="image"><br> -->
+				<input type="text" name="surface" placeholder="surface" value="<%=painting.surface%>"><br>
+				<input type="text" name="dimensions" placeholder="dimensions" value="<%=painting.dimensions%>"><br>
+				<input type="number" name="price" placeholder="price" value="<%=painting.price%>" style="margin-bottom: 26px"><br>
+				<select name="category">
+					<option value="acrylic" <%=painting.category === 'acrylic' ? 'selected': ' '%></option>acrylic</option>
+					<option value="oil" <%=painting.category === 'oil' ? 'selected': ' '%>>oil</option>
+					<option value="watercolor" <%=painting.category === 'watercolor' ? 'selected': ' '%>>watercolor</option>
+					<option value="charcoal" <%=painting.category === 'charcoal' ? 'selected': ' '%>>charcoal</option>
+					<option value="softpastel" <%=painting.category === 'softpastel' ? 'selected': ' '%>>softpastel</option>
+					<option value="polymerclay" <%=painting.category === 'polymerclay' ? 'selected': ' '%>>polymerclay</option>
+				</select><br>
+				<input type="text" name="stock" placeholder="leave empty if still in stock, if not, type: Out of stock" value="<%=painting.stock%>"><br>
+				<button>
+					Submit
+				</button>
+			</form>
+		</section>
+
+		<a href="/painting/<%=painting._id%>" class="button btn--action" style="background: transparent"><span>Back</span></a>
+	</div>
+	<%-include("partials/footer")%>

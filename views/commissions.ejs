@@ -1,0 +1,124 @@
+<%-include("partials/header")%>
+<!-- Header -->
+	<header id="header" class="alt slideshow" style="min-height: 64vh">
+		<div class="inner">
+			<img src="https://1.bp.blogspot.com/-i0cwBbkLKdo/YCwUxFEZaiI/AAAAAAAAAlY/_zgaK92z0Zsalfz00eLVwtzTuB0YTUdnQCLcBGAsYHQ/w400-h203/logo2.png" alt="" />
+			<h1></h1>
+		</div>
+	</header>
+
+<!-- Wrapper -->
+	<div id="wrapper" style="width: 47em">
+
+		<h1 style="text-align: center">
+			How to request personal commission
+		</h1>
+		<section id="main" class="main">
+			<h3>
+				Contact me
+			</h3>
+			<p class="paragraph">
+				You can contact me via Email: helenablagojevic63@gmail.com
+			</p>
+
+			<h3>
+				Quality photos
+			</h3>
+			<p class="paragraph">
+				The watercolour portrait based on your provided personal photos. The best reference photos are medium to high resolution, in clear focus. I will do my best to work with the photo of your choice, but I may reject reference photos that are too small or unclear.
+			</p>
+
+			<h3>
+				Any whim
+			</h3>
+			<p class="paragraph">
+				I can also combine separate reference photos of different people or pets into one painting. Extraneous backgrounds can be replaced with an expressive wash in color(s) of your choice, or an interpretation of the existing environment can be included.
+			</p>
+
+			<h3>
+				Payment
+			</h3>
+			<p class="paragraph">
+				I work with 60% prepayment before pencil sketch and 40% after pencil sketch but before colouring. Payment can be made via PayPal. I won't start work in colours until you confirm the sketch.
+			</p>
+
+			<h3>
+				Price details
+			</h3>
+			<p class="paragraph">
+				This prices list is only guideline and final price can be different because of background and details. Special requests also may be priced differently, to be discussed before a deposit is made. Custom sizes are also available.
+			</p>
+		</section>
+		
+		<h1 style="text-align: center">
+			Prices for watercolour portrait
+		</h1>
+
+		<!-- <button class="small">
+			<i class="fas fa-chevron-left"></i>
+			<a href="/" class="goback">Back</a>
+		</button> -->
+
+	</div>
+
+	<div id="wrapper" style="width: 47em;">
+		<div class="d-flex flex-column flex-md-row justify-content-between">
+			<h2>A5</h2>
+			<p class="paragraph2">15x21 cm 300g watercolour paper</p>
+			<h2><span class="from">from</span>50$</h2>
+		</div>
+		<div class="d-flex flex-column flex-md-row justify-content-between">
+			<h2>A4</h2>
+			<p class="paragraph2">21x30 cm 300g watercolour paper</p>
+			<h2><span class="from">from</span>100$</h2>
+		</div>
+		<div class="d-flex flex-column flex-md-row justify-content-between">
+			<h2>A3</h2>
+			<p class="paragraph2">30x42 cm 300g watercolour paper</p>
+			<h2><span class="from">from</span>150$</h2>
+		</div>
+		<div class="d-flex flex-column flex-md-row justify-content-between">
+			<h2>A2</h2>
+			<p class="paragraph2">42x60 cm 300g watercolour paper</p>
+			<h2><span class="from">from</span>220$</h2>
+		</div>
+		<div class="d-flex flex-column flex-md-row justify-content-between">
+			<h2 style="max-width: 3ch;">BIGGER FORMATS</h2>
+			<h2><span class="from">from</span>270$</h2>
+		</div>
+	</div>
+	<div id="wrapper" style="width: 46em">
+		<section id="main" class="main">
+			<h1 style="text-align: center; margin-bottom: 2rem">
+				Request personal commission
+			</h1>
+			<form action="/mail" method="POST" enctype="multipart/form-data">
+				<label>Email</label>
+				<input name="email" type="email" placeholder="email"><br>
+				<label>Choose size</label>
+				<select name="size">
+						<option value="A5(15x21 cm)">A5(15x21 cm)</option>
+						<option value="A4(21x30 cm)">A4(21x30 cm)</option>
+						<option value="A3(30x42 cm)">A3(30x42 cm)</option>
+						<option value="A2(42x60 cm)">A2(42x60 cm)</option>
+						<option value="(in comments...)">Something special (give information in comments)</option>
+				</select><br>
+
+				<label>For which date you need an artwork</label>
+				<input type="date" name="date"><br>
+
+				<label>Your photos or ideas</label>
+				<input type="file" style="letter-spacing: 2.1px" name="image"><br>
+
+				<label>Your comments</label>
+				<textarea style="height: 10em" name="comment"></textarea><br>
+
+				<button style="letter-spacing: 2.1px;">
+					Submit
+				</button>
+			</form>
+		</section>
+		<a href="/" class="button btn--action" style="background: transparent"><span>Back</span></a>
+	</div>
+			
+<%-include("partials/footer")%>

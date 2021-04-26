@@ -1,0 +1,40 @@
+<%-include("partials/header")%>
+<!-- Header -->
+	<header id="header" class="alt slideshow" style="min-height: 64vh">
+		<div class="inner">
+			<img src="https://1.bp.blogspot.com/-i0cwBbkLKdo/YCwUxFEZaiI/AAAAAAAAAlY/_zgaK92z0Zsalfz00eLVwtzTuB0YTUdnQCLcBGAsYHQ/w400-h203/logo2.png" alt="" />
+			<h1></h1>
+		</div>
+	</header>
+
+<!-- Wrapper -->
+	<div id="wrapper">
+		<section id="main" class="main">
+			<header>
+				<h2>Create New Painting Post</h2>
+			</header>
+			<form action="/painting" method="POST" enctype="multipart/form-data">
+				<input type="text" name="name" placeholder="name"><br>
+				<!-- <input type="text" name="image" placeholder="image"><br> -->
+				<input type="file" name="image" placeholder="image" style="margin-bottom: 26px"><br>
+				<input type="text" name="surface" placeholder="surface"><br>
+				<input type="text" name="dimensions" placeholder="dimensions"><br>
+				<input type="number" name="price" placeholder="price" style="margin-bottom: 26px"><br>
+				<select name="category">
+					<option value="acrylic">acrylic</option>
+					<option value="oil">oil</option>
+					<option value="watercolor">watercolor</option>
+					<option value="charcoal">charcoal</option>
+					<option value="softpastel">softpastel</option>
+					<option value="polymerclay">polymerclay</option>
+				</select><br>
+				<input type="text" name="stock" placeholder="leave empty if still in stock, if not, type: Out of stock"><br>
+				<button>
+					Submit
+				</button>
+			</form>
+		</section>
+
+		<a href="/" class="button btn--action" style="background: transparent"><span>Back</span></a>
+	</div>
+	<%-include("partials/footer")%>

@@ -1,0 +1,35 @@
+<%-include("partials/header")%>
+<!-- Header -->
+	<header id="header" class="alt slideshow" style="min-height: 64vh">
+		<div class="inner">
+			<img src="https://1.bp.blogspot.com/-i0cwBbkLKdo/YCwUxFEZaiI/AAAAAAAAAlY/_zgaK92z0Zsalfz00eLVwtzTuB0YTUdnQCLcBGAsYHQ/w400-h203/logo2.png" alt="" />
+			<h1></h1>
+		</div>
+	</header>
+
+<!-- Wrapper -->
+	<div id="wrapper">
+
+			<section class="main items">
+				<% for(let painting of paintings){ %>
+				<article class="item shadow" id="fixed-width">
+					<header style="height: 23em">
+						<a href="/painting/<%=painting._id%>">
+							<% for(let img of painting.image) { %>
+							<img class="img" src="<%=img.url%>" alt="" />
+							<% } %>
+						</a>
+					</header>
+					<ul class="actions" style="margin: 0">
+						<li><%=painting.name%></li><br>
+						<li><%=painting.price%>$</li><br>
+						<li style="color: red"><%=painting.stock%></li>
+					</ul>
+				</article>	
+				<% } %>
+			</section>
+
+			<a href="/" class="button btn--action" style="background: transparent"><span>Back</span></a>
+	</div>
+			
+<%-include("partials/footer")%>

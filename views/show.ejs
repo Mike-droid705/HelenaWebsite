@@ -1,0 +1,59 @@
+<%-include("partials/header")%>
+<!-- Header -->
+	<!-- <header id="header" class="alt">
+		<div class="inner">
+			<img src="https://1.bp.blogspot.com/-i0cwBbkLKdo/YCwUxFEZaiI/AAAAAAAAAlY/_zgaK92z0Zsalfz00eLVwtzTuB0YTUdnQCLcBGAsYHQ/w400-h203/logo2.png" alt="" />
+			<h1></h1>
+		</div>
+	</header> -->
+
+<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- <section class="main items">
+			<article class="item"> -->
+				<header>
+				</header>
+				<section class="main items">
+					<article class="show item">
+						<% for(let img of painting.image) { %>
+							<!-- <img src="" alt="" class="shadow show-image"/> -->
+							<div class="shadow show-image zoomD" id="zoom-img" style="background-image: url('<%=img.url%>')" src="<%=img.url%>"></div>
+							<!-- <img class="shadow show-image zoomD" id="zoom-img" style="background-image: url('<%=img.url%>')" src="<%=img.url%>"> -->
+						<% } %>
+					</article>
+					<article class="show item">
+						<ul class="actions">
+							<li style="color: red"><%=painting.stock%></li><br>
+							<h3 style="margin: 0;"><%=painting.name%></h3>
+							<h5><%=painting.price%>$</h5><br>
+							<li>- original work <%=painting.dimensions%></li><br>
+							<li>- <%=painting.category%> on <%=painting.surface%></li><br>
+							<li>- ships International in 1-2 business days</li><br>
+							<li>- shipping and tax not included</li>
+						</ul>
+						<% if(currentUser){ %>
+						<form action="/painting/<%=painting._id%>?_method=DELETE" method="POST">
+							<button>
+								Delete
+							</button>
+						</form>
+						<form action="/painting/stock/<%=painting._id%>?_method=PUT" method="POST">
+							<input type="hidden" name="stock" value="Out of Stock">
+							<button>
+								Mark as Out of Stock
+							</button>
+						</form>
+						<a class="button" href="/painting/<%=painting._id%>/edit">Edit</a>
+						<% } %>
+					</article>
+				</section>
+				<div id="lb-back">
+			  		<div id="lb-img"></div>
+				</div>
+			<!-- </article>
+		</section> -->
+		<a href="/type/<%=painting.category%>" class="button btn--action" style="background: transparent"><span>Back</span></a>
+		<script src="/js/zoom.js"></script>
+	</div>
+<%-include("partials/footer")%>
