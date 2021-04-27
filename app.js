@@ -127,8 +127,8 @@ app.get('/about', (req, res)=>{
 	res.send('Page not made');
 });
 
-app.get('/contact', (req, res)=>{
-	res.send('Page not made');
+app.get('/contacts', (req, res)=>{
+	res.render("contacts");
 });
 
 //email route
