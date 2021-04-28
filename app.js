@@ -124,7 +124,7 @@ app.get('/delivery', (req, res)=>{
 });
 
 app.get('/about', (req, res)=>{
-	res.send('Page not made');
+	res.render('about');
 });
 
 app.get('/contacts', (req, res)=>{
