@@ -19,15 +19,10 @@ const paintingSchema = new mongoose.Schema({
 		type: String,
 		required: true
 	},
-	price: {
-		type: Number,
-		required: true,
-		min: 0
-	},
 	category: {
 		type: String,
 		lowercase: true,
-		enum: ['acrylic', 'oil', 'watercolor', 'charcoal', 'softpastel', 'polymerclay']
+		enum: ['acrylic', 'oil', 'charcoal', 'softpastel']
 	},
 	stock: {
 		type: String
