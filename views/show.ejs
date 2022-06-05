@@ -17,20 +17,16 @@
 				<section class="main items">
 					<article class="show item">
 						<% for(let img of painting.image) { %>
-							<!-- <img src="" alt="" class="shadow show-image"/> -->
 							<div class="shadow show-image zoomD" id="zoom-img" style="background-image: url('<%=img.url%>')" src="<%=img.url%>"></div>
-							<!-- <img class="shadow show-image zoomD" id="zoom-img" style="background-image: url('<%=img.url%>')" src="<%=img.url%>"> -->
 						<% } %>
 					</article>
 					<article class="show item">
 						<ul class="actions">
 							<li style="color: red"><%=painting.stock%></li><br>
 							<h3 style="margin: 0;"><%=painting.name%></h3>
-							<!-- <h5><%=painting.price%>$</h5><br> -->
 							<li>- original work <%=painting.dimensions%></li><br>
 							<li>- <%=painting.category%> on <%=painting.surface%></li><br>
-							<li>- ships International in 1-2 business days</li><br>
-							<li>- shipping and tax not included</li>
+							<li>- made in year <%=painting.year%></li><br>
 						</ul>
 						<% if(currentUser){ %>
 						<form action="/painting/<%=painting._id%>?_method=DELETE" method="POST">
@@ -56,4 +52,4 @@
 		<a href="/type/<%=painting.category%>" class="button btn--action" style="background: transparent"><span>Back</span></a>
 		<script src="/js/zoom.js"></script>
 	</div>
-<%-include("partials/footer_show")%>
+<%-include("partials/footer-show")%>

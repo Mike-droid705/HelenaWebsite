@@ -13,22 +13,19 @@
 			<header>
 				<h2>Create New Painting Post</h2>
 			</header>
-			<form action="/painting" method="POST" enctype="multipart/form-data">
+			<form name="newPaintingForm" action="/painting" method="POST" onsubmit="return validateForm()" enctype="multipart/form-data" required>
 				<input type="text" name="name" placeholder="name"><br>
 				<input type="file" name="image" placeholder="image" style="margin-bottom: 26px"><br>
 				<input type="text" name="surface" placeholder="surface"><br>
 				<input type="text" name="dimensions" placeholder="dimensions"><br>
 				<!-- <input type="number" name="price" placeholder="price" style="margin-bottom: 26px"><br> -->
 				<select name="category">
-					<option value="acrylic">acrylic</option>
 					<option value="oil">oil</option>
 					<option value="charcoal">charcoal</option>
 					<option value="softpastel">softpastel</option>
 				</select><br>
-				<input type="text" name="stock" placeholder="leave empty if still in stock, if not, type: Out of stock"><br>
-				<button>
-					Submit
-				</button>
+				<input type="text" name="year" placeholder="year"><br>
+				<input type="submit" value="Submit">
 			</form>
 		</section>
 

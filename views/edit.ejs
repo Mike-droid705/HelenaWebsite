@@ -15,20 +15,15 @@
 			</header>
 			<form action="/painting/<%=painting._id%>?_method=PUT" method="POST">
 				<input type="text" name="name" placeholder="name" value="<%=painting.name%>"><br>
-				<!-- <input type="text" name="image" placeholder="image"><br> -->
-				<!-- <input type="file" name="image" placeholder="image"><br> -->
+				<input type="text" name="image" placeholder="name" value="<%=painting.image[0].url%>"><br>
 				<input type="text" name="surface" placeholder="surface" value="<%=painting.surface%>"><br>
 				<input type="text" name="dimensions" placeholder="dimensions" value="<%=painting.dimensions%>"><br>
-				<!-- <input type="number" name="price" placeholder="price" value="<%=painting.price%>" style="margin-bottom: 26px"><br> -->
 				<select name="category">
-					<option value="acrylic" <%=painting.category === 'acrylic' ? 'selected': ' '%></option>acrylic</option>
 					<option value="oil" <%=painting.category === 'oil' ? 'selected': ' '%>>oil</option>
-					<option value="watercolor" <%=painting.category === 'watercolor' ? 'selected': ' '%>>watercolor</option>
 					<option value="charcoal" <%=painting.category === 'charcoal' ? 'selected': ' '%>>charcoal</option>
 					<option value="softpastel" <%=painting.category === 'softpastel' ? 'selected': ' '%>>softpastel</option>
-					<option value="polymerclay" <%=painting.category === 'polymerclay' ? 'selected': ' '%>>polymerclay</option>
 				</select><br>
-				<input type="text" name="stock" placeholder="leave empty if still in stock, if not, type: Out of stock" value="<%=painting.stock%>"><br>
+				<input type="text" name="year" placeholder="year" value="<%=painting.year%>"><br>
 				<button>
 					Submit
 				</button>

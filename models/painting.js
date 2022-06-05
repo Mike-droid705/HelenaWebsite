@@ -24,8 +24,8 @@ const paintingSchema = new mongoose.Schema({
 		lowercase: true,
 		enum: ['acrylic', 'oil', 'charcoal', 'softpastel']
 	},
-	stock: {
-		type: String
+	year: {
+		type: String,
 	}
 })
 

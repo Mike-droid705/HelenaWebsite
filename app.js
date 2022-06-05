@@ -103,7 +103,14 @@ app.get('/painting/:id/edit', async(req, res)=>{
 
 app.put('/painting/:id', async(req, res)=>{
 	const {id} = req.params;
-	const painting = await Painting.findByIdAndUpdate(id, req.body, {runValidators: true});
+	const painting = await Painting.findById(id);
+	painting.name = req.body.name;
+	painting.image[0].url = req.body.image;
+	painting.surface = req.body.surface;
+	painting.dimensions = req.body.dimensions;
+	painting.category = req.body.category;
+	painting.year = req.body.year;
+	await painting.save();
 	res.redirect(`/painting/${painting._id}`)
 });
 
@@ -115,13 +122,6 @@ app.delete('/painting/:id', async (req, res)=>{
 });
 
 //navbar
-app.get('/commissions', (req, res)=>{
-	res.render('commissions');
-});
-
-app.get('/delivery', (req, res)=>{
-	res.render('delivery');
-});
 
 app.get('/about', (req, res)=>{
 	res.render('about');

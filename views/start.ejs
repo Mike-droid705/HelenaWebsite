@@ -1,9 +1,10 @@
 <%-include("partials/header")%>
 <!-- Header -->
-	<header id="header" class="alt slideshow" style="min-height: 64vh">
+	<header id="header" class="alt slideshow" style="min-height: 100vh">
 		<div class="inner">
-			<img src="https://1.bp.blogspot.com/-i0cwBbkLKdo/YCwUxFEZaiI/AAAAAAAAAlY/_zgaK92z0Zsalfz00eLVwtzTuB0YTUdnQCLcBGAsYHQ/w400-h203/logo2.png" alt="" />
-			<h1></h1>
+			<h1>
+				Helena Blagojević
+			</h1>
 		</div>
 	</header>
 
@@ -12,75 +13,42 @@
 <!-- Wrapper -->
 	<div id="wrapper">
 
-		<!-- Banner -->
-			<!-- <section id="intro" class="main">
-				<span class="icon fa-diamond major"></span>
-				<h2>Magna porta maximus</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae<br />
-				malesuada turpis. Nam pellentesque in ac aliquam. Aliquam tempor<br />
-				mi porta egestas maximus lorem ipsum dolor.</p>
-				<ul class="actions">
-					<li><a href="#" class="button big">Learn More</a></li>
-				</ul>
-			</section> -->
-		<!-- Items -->
 			<% if(currentUser){ %>
 				<div style="text-align: center; margin-bottom: 6rem">
 					<a class="button" href="/createPainting">Create New Painting</a>
 				</div>
 			<%}%>
+		<!-- Banner -->
+			<section id="intro" class="main">
+				<h2>Artist Statement</h2>
+				<p>My artwork is represented mostly through the insect world, specifically portraying praying mantis in all
+				their various shapes and forms, allowing me to experiment with the project by taking their piercing
+				eyes to my advantage in painting, drawing and lithography. In this experiment my goal is to show
+				human’s psychologhy as well as physical appearance through this particular insect, painting them
+				strongly in vivid colors while moving through bigger canvases. The tehniques I mostly use are soft
+				pastel, oil and charcoal.</p>
+			</section>
+		<!-- Items -->
 			<section class="main items">
-				<article class="item shadow">
-					<header>
-						<a href="/type/acrylic">
-							<img class="fixed" style="margin-top: -35%" src="https://1.bp.blogspot.com/-O2EW4FvkkJc/YCwVDEx7dlI/AAAAAAAAAlg/CruM7AqMygUDFjjDZhmgjZxxM6bjDJBGACLcBGAsYHQ/s16000/01.jpg" alt="" />
-						</a>
-						<h3 class="text-shadow">Acrylic</h3>
+				<article class="item shadow"  id="fixed-width">
+					<header style="height: 22em">
+						<a href="/type/oil"><img class="fixed " style="margin-top: -10%" src="https://blogger.googleusercontent.com/img/a/AVvXsEiAUALgOVC887kU8mxth7o4Izb0RWawba6Av9FB9wWqIEt70qwOqL4vjUIp4ExYFPygc7MI4-oD3QYH3K4rU6GQog2vbzU-QzcvymN2Yu_Tlwv5nXujV8m-nbeTilxRpVsemVtExXoVa4AAmz-QZk_ktOYfN0wLxmBTVVA10itJJTxqNtm-Mlo3SbloWw=s16000" alt="" /></a>
+						<h3 class="text-shadow" style="font-family: 'Courgette', cursive;">Oil</h3>
 					</header>
-					<ul class="actions">
-						<li><a href="/type/acrylic" class="button">More</a></li>
-					</ul>
 				</article>
-				<article class="item shadow">
-					<header>
-						<a href="/type/oil"><img class="fixed " style="margin-top: -30%" src="https://1.bp.blogspot.com/-xBCiNMEQ3ac/YCwVE2jeGMI/AAAAAAAAAlk/81c51Sa6AsQoz2IDjwyPjHDNVcDhbgIBgCLcBGAsYHQ/s16000/02.jpg" alt="" /></a>
-						<h3 class="text-shadow">Oil</h3>
+				<article class="item shadow"  id="fixed-width">
+					<header style="height: 22em">
+						<a href="/type/charcoal"><img class="fixed " style="margin-top: -24px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7rroCAh7wbym0QIxVe3T-gSNOoYfvUUxNaxkvRyMQk4pIRiuKIHT8xQcGLX8vBTVlmQyDdyOXEDlaaR-RYsaNiN-1JFTjO3uRlDrNkAhgT4P6wU-Ft9TmixhDvArc8uE1qkJEfDdjLAu4cBQhmSFJ7UI1ePXnvf2Q6zw7f0-ne-trHTD4rl9-cbxS4A/s16000/viber_image_2022-05-30_22-34-00.jpg" alt="" /></a>
+						<h3 class="text-shadow" style="font-family: 'Courgette', cursive;">Charcoal</h3>
 					</header>
-					<ul class="actions">
-						<li><a href="/type/oil" class="button">More</a></li>
-					</ul>
 				</article>
-				<article class="item shadow">
-					<header>
-						<a href="/type/charcoal"><img class="fixed " style="margin-top: -24px" src="https://1.bp.blogspot.com/-WAxUHxghCEA/YCwVI_UHglI/AAAAAAAAAls/e_X7CCyCWUghzR5DHGZ1Izr_qsjoCW-fwCLcBGAsYHQ/s16000/04.jpg" alt="" /></a>
-						<h3 class="text-shadow">Charcoal</h3>
+				<article class="item shadow"  id="fixed-width">
+					<header style="height: 22em">
+						<a href="/type/softpastel"><img class="fixed " style="margin-top: -14%" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjbjRrCbefNhMKP44lG5o-F9Y_auUkv20qRW7VcD_I2jefq_RuCRG8DLeUzYk2K3bdBcBE6S1oU0qZtBhA8aWhhV9MJPZwuXRFFXYC9UE2oUK_YqeJS85X_1QIgjrINemcI2GtHvGCoUGAP3s4zLPLQFZuKz0Z1uicGONVS6FZtUxeg3-fw0t9hVodh8A/s16000/viber_image_2022-05-30_22-33-05.jpg" alt="" /></a>
+						<h3 class="text-shadow" style="font-family: 'Courgette', cursive;">Soft Pastel</h3>
 					</header>
-					<ul class="actions">
-						<li><a href="/type/charcoal" class="button">More</a></li>
-					</ul>
-				</article>
-				<article class="item shadow">
-					<header>
-						<a href="/type/softpastel"><img class="fixed " style="margin-top: -14%" src="https://1.bp.blogspot.com/-zQjXb_GMS_g/YCwVKmyfThI/AAAAAAAAAlw/Bl6tcKiN7-Y50QiWs_0dP21J6BNzBsI8gCLcBGAsYHQ/s1014/05.jpg" alt="" /></a>
-						<h3 class="text-shadow">Soft Pastel</h3>
-					</header>
-					<ul class="actions">
-						<li><a href="/type/softpastel" class="button">More</a></li>
-					</ul>
 				</article>
 			</section>
-
-		<!-- CTA -->
-
-				<!-- Main -->
-				<!--
-					<section id="main" class="main">
-						<header>
-							<h2>Lorem ipsum dolor</h2>
-						</header>
-						<p>Fusce malesuada efficitur venenatis. Pellentesque tempor leo sed massa hendrerit hendrerit. In sed feugiat est, eu congue elit. Ut porta magna vel felis sodales vulputate. Donec faucibus dapibus lacus non ornare. Etiam eget neque id metus gravida tristique ac quis erat. Aenean quis aliquet sem. Ut ut elementum sem. Suspendisse eleifend ut est non dapibus. Nulla porta, neque quis pretium sagittis, tortor lacus elementum metus, in imperdiet ante lorem vitae ipsum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam eget neque id metus gravida tristique ac quis erat. Aenean quis aliquet sem. Ut ut elementum sem. Suspendisse eleifend ut est non dapibus. Nulla porta, neque quis pretium sagittis, tortor lacus elementum metus, in imperdiet ante lorem vitae ipsum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-					</section>
-				-->
 			</div>
 
 			<script src="/js/jquery.min.js"></script>

@@ -1,26 +1,32 @@
 <%-include("partials/header")%>
 <!-- Header -->
-	<header id="header" class="alt slideshow" style="min-height: 64vh">
-		<div class="inner">
-			<img src="https://1.bp.blogspot.com/-i0cwBbkLKdo/YCwUxFEZaiI/AAAAAAAAAlY/_zgaK92z0Zsalfz00eLVwtzTuB0YTUdnQCLcBGAsYHQ/w400-h203/logo2.png" alt="" />
-			<h1></h1>
-		</div>
-	</header>
+	<% if(paintings[0].category == "oil"){%>
+		<header id="header" class="alt" style="min-height: 100vh; background-image: url('https://blogger.googleusercontent.com/img/a/AVvXsEisz1pwJrhzM7NrpzkHCp5I-AhjsohBdoH50N1YpX6Dgb4sRDdzhu7coNHZEss1XItzM_uY5cZzlL-RtugAKjf7zNegvz8jHmWrRRFTOnVf4KIeMG7AomJVT8zk3kHHZvfvOI2JXcCo86nHZHIGuSGG_i8sIB_SJRQWi6V3L52SfDjWhl0JnUKqC8wX5g=s16000');">
+	<%}else if(paintings[0].category == "charcoal"){%>
+		<header id="header" class="alt" style="min-height: 100vh; background-image: url('https://blogger.googleusercontent.com/img/a/AVvXsEg3u6P_iG_QWKqpyoQry0niWIKkQr7oi9JKySTa0WL3qwTsQtjz8BYS6X8UIIL6X8t1eWDrMjh3Lwlzw7lP858ve6xG333F_UAbRxrcMK3Wj6LNrKcPDknNZOz6QTZLmnnHER5HJFrBFurd1wNSbqRvlP67KrF8mQxd2WVmyymxiDWFETPSsIzn5ohZ3A=s16000');">
+	<%}else if(paintings[0].category == "softpastel"){%>
+		<header id="header" class="alt" style="min-height: 100vh; background-image: url('https://blogger.googleusercontent.com/img/a/AVvXsEif41UbbvgFQDTNl7eeW1npW1yCWSzusAumhw7BXO3PX5bytWKCMW9mf8eJCWGbpCV2ccjONd2xoqH4g5VgRPrnE7sv67K2Nrily3BQAAkVqHVDI9pmCiNJqo8PKd957LVvXY45KkApHQLaz1IA_AkGcpdATgUfPbNbFK2DrGQqRhGEp9McdNCaQqwZhw=s16000');">
+	<%}%>
+			<div class="inner">
+				<% if(paintings[0].category == "softpastel"){%>
+					<h2 style="text-align: center; font-size: 3.5em; text-transform: uppercase;font-family: 'Courgette', cursive;margin: 0;">
+						soft pastel
+					</h2>
+					<h1></h1>
+				<%}else{%>
+					<h2 style="text-align: center; font-size: 3.5em; text-transform: uppercase;font-family: 'Courgette', cursive;margin: 0;">
+						<%= paintings[0].category %>
+					</h2>
+					<h1></h1>
+				<%}%>
+			</div>
+		</header>
 
 <!-- Wrapper -->
 	<div id="wrapper">
 			
-		<% if(paintings[0].category == "softpastel"){%>
-			<h1 style="text-align: center; font-size: 3em">
-				soft pastel
-			</h1>
-		<%}else{%>
-			<h1 style="text-align: center; font-size: 3em">
-				<%= paintings[0].category %>
-			</h1>
-		<%}%>
 
-			<section class="main items">
+			<section class="main index-items">
 				<% for(let painting of paintings){ %>
 				<article class="item shadow" id="fixed-width">
 					<header style="height: 23em">
@@ -30,11 +36,11 @@
 							<% } %>
 						</a>
 					</header>
-					<ul class="actions" style="margin: 0">
-						<li><%=painting.name%></li><br>
+					<!-- <ul class="actions" style="margin: 0"> -->
+						<!-- <li><%=painting.name%></li><br> -->
 						<!-- <li><%=painting.price%>$</li><br> -->
-						<li style="color: red"><%=painting.stock%></li>
-					</ul>
+						<!-- <li style="color: red"><%=painting.stock%></li> -->
+					<!-- </ul> -->
 				</article>	
 				<% } %>
 			</section>

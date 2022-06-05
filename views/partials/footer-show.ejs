@@ -7,38 +7,22 @@
 					</ul>
 				</footer>
 			</div>
-<div class="footer-img slideshow">
+<div class="footer-img">
 			<div id="wrapper" style="padding: 1em 0 0 0">
 				<footer class="container py-5" style="padding-bottom: 0!important; padding-top: 0!important">
 					<div class="row">
 						<div class="col-6 col-md">
-							<h5 id="white-text">Shop</h5>
+							<h5 id="white-text">Categories</h5>
 							<ul class="list-unstyled text-small" style="margin: 0; font-size: 17px">
-								<li><a class="text-muted" href="/type/acrylic" id="white-text">Acrylic</a></li>
 								<li><a class="text-muted" href="/type/oil" id="white-text">Oil</a></li>
 								<li><a class="text-muted" href="/type/charcoal" id="white-text">Charcoal</a></li>
 								<li><a class="text-muted" href="/type/softpastel" id="white-text">Soft Pastel</a></li>
 							</ul>
 						</div>
 						<div class="col-6 col-md">
-							<h5 id="white-text">Service and support</h5>
-							<ul class="list-unstyled text-small" style="margin: 0; font-size: 17px">
-								<li><a class="text-muted" href="/delivery" id="white-text">Delivery and payment</a></li>
-								<li><a class="text-muted" href="/delivery" id="white-text">Return and Exchange</a></li>
-								<li><a class="text-muted" href="/offer" id="white-text">Public offer</a></li>
-							</ul>
-						</div>
-						<div class="col-6 col-md">
-							<h5 id="white-text">Other</h5>
-							<ul class="list-unstyled text-small" style="margin: 0; font-size: 17px">
-								<li><a class="text-muted" href="/contact" id="white-text">Contacts</a></li>
-								<li><a class="text-muted" href="/commissions" id="white-text">Commissions</a></li>
-							</ul>
-						</div>
-						<div class="col-6 col-md d-none d-lg-block d-md-block">
 							<h5 id="white-text">Contact me</h5>
 							<ul class="list-unstyled text-small" style="margin: 0; font-size: 17px">
-								<li><a class="text-muted" href="/contact" id="white-text">helenablagojevic63@gmail.com</a></li>
+								<li><a class="text-muted" href="/contacts" id="white-text">contact</a></li>
 							</ul>
 						</div>
 					</div>
@@ -50,14 +34,47 @@
 		<!-- Scripts -->
 		<script src="/js/jquery.min.js"></script>
 		<script src="/js/skel.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
 		<script>
-			var $nav = $("#mainNavbar");
-			var $text = $(".nav-link");
-			$nav.addClass("scrolled");
-			$text.addClass("black-text");
+		function validateForm() {
+		  var x = document.forms["newPaintingForm"];
+		  for(let i of x){
+			if (i.value == "" || i.value == null) {
+				alert(i.name + " must be filled out");
+				return false;
+			}
+		  }
+		}
+		</script>
+		<script>
+		var $nav = $("#mainNavbar");
+		var $text = $(".nav-link");
+		$nav.addClass("scrolled");	
     </script>
+	<script>
+	var img = document.querySelectorAll(".img");
+	for(let i of img){
+		FixWidthAndHeight(i);
+		i.onload = function(){
+			if(i.width > i.height){
+				i.classList.add("fixed-width");
+			}else{
+				i.classList.add("fixed-height");
+			}
+		};
+	}
+		
+	function FixWidthAndHeight(i){
+		if(i.width > i.height){
+			i.classList.add("fixed-width");
+		}else if(i.width < i.height){
+			i.classList.add("fixed-height");
+		}
+	}
+	</script>
 	<script>
 		// This function will show the image in the lightbox
 var zoomImg = function () {
