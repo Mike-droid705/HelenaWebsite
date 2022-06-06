@@ -179,6 +179,17 @@ box-shadow: inset 0 0 0 .25rem #ffbe76;
 		width: 70rem!important;
 	}
 	
+	@media (max-width: 736px){
+		.width{
+			height: 100%!important;
+			width: 100%!important;
+		}
+		.height{
+			height: 100%!important;	
+			width: 100%!important;
+		}
+	}
+	
 	.fa-instagram:hover {
 		color: tan!important;
 	}
@@ -233,7 +244,48 @@ a:hover{
 		margin-left: auto;
 		margin-right: auto;
 	}
-
+	
+	.aboutHeader {
+		align-items: end;
+		justify-content: end;
+		padding: 14em 0 0 0;
+	}
+	
+	.order-change-1{
+		order: 2;
+	}
+	
+	.order-change-2{
+		order: 3;
+	}
+	
+	
+	
+	@media screen and (max-width: 736px){
+		#showItem{
+			padding: 6em 3em 1em 0;
+		}
+		.break::after{
+			content: "\a";
+			white-space: pre;
+		}
+		.fixed-width{
+			height:100%;
+			display: block;
+			margin-left: 0;
+		}
+		.aboutHeader {
+			align-items: center!important;
+			justify-content: end!important;
+			padding: 14em 0 2em 0!important;
+		}
+		.order-change-1{
+			order: 3;
+		}
+		.order-change-2{
+			order: 2;
+		}
+	}
 	
 	/* #mainNavbar .navbar-brand {
     color: #EA1C2C;
@@ -276,7 +328,12 @@ a:hover{
 	
 	.navbar-toggler{
 		box-shadow: none!important;
+		text-decoration: none;
+		outline:0;
+		border-color: transparent!important;
 	}
+	
+	.navbar-toggler:focus{outline: transparent;}
 	
 	@media (max-width: 1200px) {
 		#headingGroup h1 {
@@ -466,12 +523,8 @@ a:hover{
 			font-size: 1.5em;
 		}
 
-		h2 {
-			font-size: 1.25em;
-		}
-
 		h3 {
-			font-size: 1em;
+			font-size: 1.5em;
 		}
 
 	}
@@ -1186,9 +1239,9 @@ a:hover{
 				}
 
 					ul.actions li {
-						padding: 1em 0 0 0;
+						/* padding: 1em 0 0 0; */
 						display: block;
-						text-align: center;
+						/* text-align: center; */
 						width: 100%;
 					}
 
