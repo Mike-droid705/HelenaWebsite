@@ -1,0 +1,58 @@
+<%-include("partials/header")%>
+<!-- Header -->
+	<header id="header" class="alt slideshow" style="min-height: 100vh">
+		<div class="inner">
+			<h1>
+				Helena Blagojević
+			</h1>
+		</div>
+	</header>
+
+	
+
+<!-- Wrapper -->
+	<div id="wrapper">
+
+			<% if(currentUser){ %>
+				<div style="text-align: center; margin-bottom: 6rem">
+					<a class="button" href="/createPainting">Create New Painting</a>
+				</div>
+			<%}%>
+		<!-- Banner -->
+			<section id="intro" class="main">
+				<h2>Artist Statement</h2>
+				<p>My artwork is represented mostly through the insect world, specifically portraying praying mantis in all
+				their various shapes and forms, allowing me to experiment with the project by taking their piercing
+				eyes to my advantage in painting, drawing and lithography. In this experiment my goal is to show
+				human’s psychologhy as well as physical appearance through this particular insect, painting them
+				strongly in vivid colors while moving through bigger canvases. The tehniques I mostly use are soft
+				pastel, oil and charcoal.</p>
+			</section>
+		<!-- Items -->
+			<section class="main items">
+				<article class="item shadow"  id="fixed-width">
+					<header style="height: 22em">
+						<a href="/type/oil"><img class="fixed " style="margin-top: -10%" src="https://blogger.googleusercontent.com/img/a/AVvXsEiAUALgOVC887kU8mxth7o4Izb0RWawba6Av9FB9wWqIEt70qwOqL4vjUIp4ExYFPygc7MI4-oD3QYH3K4rU6GQog2vbzU-QzcvymN2Yu_Tlwv5nXujV8m-nbeTilxRpVsemVtExXoVa4AAmz-QZk_ktOYfN0wLxmBTVVA10itJJTxqNtm-Mlo3SbloWw=s16000" alt="" /></a>
+						<h3 class="text-shadow" style="font-family: 'Courgette', cursive;">Oil</h3>
+					</header>
+				</article>
+				<article class="item shadow"  id="fixed-width">
+					<header style="height: 22em">
+						<a href="/type/charcoal"><img class="fixed " style="margin-top: -24px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7rroCAh7wbym0QIxVe3T-gSNOoYfvUUxNaxkvRyMQk4pIRiuKIHT8xQcGLX8vBTVlmQyDdyOXEDlaaR-RYsaNiN-1JFTjO3uRlDrNkAhgT4P6wU-Ft9TmixhDvArc8uE1qkJEfDdjLAu4cBQhmSFJ7UI1ePXnvf2Q6zw7f0-ne-trHTD4rl9-cbxS4A/s16000/viber_image_2022-05-30_22-34-00.jpg" alt="" /></a>
+						<h3 class="text-shadow" style="font-family: 'Courgette', cursive;">Charcoal</h3>
+					</header>
+				</article>
+				<article class="item shadow"  id="fixed-width">
+					<header style="height: 22em">
+						<a href="/type/softpastel"><img class="fixed " style="margin-top: -14%" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjbjRrCbefNhMKP44lG5o-F9Y_auUkv20qRW7VcD_I2jefq_RuCRG8DLeUzYk2K3bdBcBE6S1oU0qZtBhA8aWhhV9MJPZwuXRFFXYC9UE2oUK_YqeJS85X_1QIgjrINemcI2GtHvGCoUGAP3s4zLPLQFZuKz0Z1uicGONVS6FZtUxeg3-fw0t9hVodh8A/s16000/viber_image_2022-05-30_22-33-05.jpg" alt="" /></a>
+						<h3 class="text-shadow" style="font-family: 'Courgette', cursive;">Soft Pastel</h3>
+					</header>
+				</article>
+			</section>
+			</div>
+
+			<script src="/js/jquery.min.js"></script>
+			<script src="/js/skel.min.js"></script>
+			<script src="/js/util.js"></script>
+			<script src="/js/main.js"></script>
+<%-include("partials/footer")%>
