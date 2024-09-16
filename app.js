@@ -18,7 +18,7 @@ const Painting = require("./models/painting");
 
 const usersRoutes = require("./routes/users")
 
-mongoose.connect("mongodb+srv://Mike:" + process.env.PASSWORD + "@cluster0.dueqsab.mongodb.net/gallery?retryWrites=true&w=majority", {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false})
+mongoose.connect("mongodb+srv://Milos:" + "#mongodb123" + "@cluster0.dueqsab.mongodb.net/gallery?retryWrites=true&w=majority", {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false})
 	.then(() =>{
 		console.log("Connection open!")
 	})
