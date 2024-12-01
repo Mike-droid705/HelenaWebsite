@@ -18,7 +18,7 @@ const Painting = require("./models/painting");
 
 const usersRoutes = require("./routes/users")
 
-mongoose.connect("mongodb+srv://Milos:" + process.env.PASSWORD + "@cluster0.bdopx.mongodb.net/gallery?retryWrites=true&w=majority", {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false})
+mongoose.connect("mongodb+srv://Mike:" + process.env.PASSWORD + "@cluster0.dueqsab.mongodb.net/gallery?retryWrites=true&w=majority", {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false})
 	.then(() =>{
 		console.log("Connection open!")
 	})
@@ -54,6 +54,12 @@ app.use(usersRoutes);
 //start
 app.get('/', function(req, res){
 	res.render("start");
+})
+
+app.get('/register', async (req, res) => {
+	const user = new User({email: "helenablagojevic@gmail.com", username: "Helena"});
+	const newUser = await User.register(user, "ella123");
+	res.send(newUser);
 })
 
 //index
@@ -159,6 +165,10 @@ app.post('/mail', upload.array('image'), (req, res)=>{
 		res.redirect('/commissions')
 	});
 });
+
+app.get("/easteregg", (req, res)=>{
+	res.render("easteregg");
+})
 
 app.get("/*", (req, res)=>{
 	res.render("pagentf")
