@@ -1,51 +1,54 @@
 <%-include("partials/header")%>
 <!-- Header -->
-	<% if(paintings[0].category == "oil"){%>
-		<header id="header" class="alt" style="min-height: 100vh; background-image: url('https://blogger.googleusercontent.com/img/a/AVvXsEisz1pwJrhzM7NrpzkHCp5I-AhjsohBdoH50N1YpX6Dgb4sRDdzhu7coNHZEss1XItzM_uY5cZzlL-RtugAKjf7zNegvz8jHmWrRRFTOnVf4KIeMG7AomJVT8zk3kHHZvfvOI2JXcCo86nHZHIGuSGG_i8sIB_SJRQWi6V3L52SfDjWhl0JnUKqC8wX5g=s16000');">
-	<%}else if(paintings[0].category == "charcoal"){%>
-		<header id="header" class="alt" style="min-height: 100vh; background-image: url('https://blogger.googleusercontent.com/img/a/AVvXsEg3u6P_iG_QWKqpyoQry0niWIKkQr7oi9JKySTa0WL3qwTsQtjz8BYS6X8UIIL6X8t1eWDrMjh3Lwlzw7lP858ve6xG333F_UAbRxrcMK3Wj6LNrKcPDknNZOz6QTZLmnnHER5HJFrBFurd1wNSbqRvlP67KrF8mQxd2WVmyymxiDWFETPSsIzn5ohZ3A=s16000');">
-	<%}else if(paintings[0].category == "softpastel"){%>
-		<header id="header" class="alt" style="min-height: 100vh; background-image: url('https://blogger.googleusercontent.com/img/a/AVvXsEif41UbbvgFQDTNl7eeW1npW1yCWSzusAumhw7BXO3PX5bytWKCMW9mf8eJCWGbpCV2ccjONd2xoqH4g5VgRPrnE7sv67K2Nrily3BQAAkVqHVDI9pmCiNJqo8PKd957LVvXY45KkApHQLaz1IA_AkGcpdATgUfPbNbFK2DrGQqRhGEp9McdNCaQqwZhw=s16000');">
+	<% if(paintings[0].category == "drawing"){%>
+	<div class="index-header" style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEggd8xPPSDGHm0G7W3fe7pSQgmhFLtpzH0Fc_drX-oBj3MHhY77FF7QG4P3-hMQ6A8kAmxytVryToRgklQUOnr6E8Pr2DSPNgVc-CLDDemEW6nZuFMwfKvjkoD30TyJ5SonGoa7FB3tDpyK2S8D0kBYhRuWfSU0W5UtFtINUKc9xwaAfZ7G1_g-OJM-Rsw3/s16000/drawings-bg.jpg');">
+	<%}else if(paintings[0].category == "painting"){%>
+	<div class="index-header" style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGl9KWCacMGFRin5d6QWyvtZBGSgRtetEs989krHSEi8QxOfLqCnVME4EzoIxv3vcPOLJi6SGk8tDtqZTbcZw_QDh_Q6OWfD7Dx5EtjbQpHqcJIDoc3drHPjgqAsdo8zdIEiBksuM7pWF9FlzbjRC65OMDcTbNIX1O4EgNwkDGija6HR7pSbejW7YIMR_2/s16000/paintings-bg.jpg');">
 	<%}%>
-			<div class="inner">
-				<% if(paintings[0].category == "softpastel"){%>
-					<h2 style="text-align: center; font-size: 3.5em; text-transform: uppercase;font-family: 'Courgette', cursive;margin: 0;">
-						soft pastel
-					</h2>
-					<h1></h1>
-				<%}else{%>
-					<h2 style="text-align: center; font-size: 3.5em; text-transform: uppercase;font-family: 'Courgette', cursive;margin: 0;">
-						<%= paintings[0].category %>
-					</h2>
-					<h1></h1>
-				<%}%>
-			</div>
-		</header>
+		<div class="inner">
+			<% if(paintings[0].category == "drawing"){%>
+				<img class="title" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdRjtkaB-CeB6pFok4569aU91-kJ6vSnMpR9cKjk0EMwvDk4UNsr3iRZe2lJXR78iGuGf4vRjKN0R6P90MOqv2pIu2WRCc6BR19kjcUil-ErevSJ_SBHdpcgdcAj8xhCgMYHY3qawJEwuu4nC_i3KawQBRMWuG0zRpbW30vqNidv_fMsHvo0_eqBDlcwtD/s16000/Drawings_title.PNG">
+			<%}else{%>
+				<img class="title" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFkhHFjoN6hDenWLknIAiwnTafn3RYfF0jcHxxv4MAWQK-WI980QfUKQt3AxBUoXsA1pTC1wLUj-qekpWKIR0yODhXmzRtLSvygHzr6Ufav4uaT1mhlguoCsBE91JgPZPX6fFBPdwmfhohOpDM3kmncRYFiEVV1dMLUUbIj25iN0pwoi7SPC-JMlpOYBGq/s16000/Paintings_title.PNG">
+			<%}%>
+		</div>
+			
+	
+	
 
 <!-- Wrapper -->
-	<div id="wrapper">
-			
-
-			<section class="main index-items">
-				<% for(let painting of paintings){ %>
-				<article class="item shadow" id="fixed-width">
-					<header style="height: 23em">
-						<a href="/painting/<%=painting._id%>">
-							<% for(let img of painting.image) { %>
-							<img class="img" src="<%=img.url%>" alt="" />
-							<% } %>
-						</a>
-					</header>
-					<!-- <ul class="actions" style="margin: 0"> -->
-						<!-- <li><%=painting.name%></li><br> -->
-						<!-- <li><%=painting.price%>$</li><br> -->
-						<!-- <li style="color: red"><%=painting.stock%></li> -->
-					<!-- </ul> -->
-				</article>	
+		<div class="grid">
+			<% for(let i = paintings.length-1; i >= 0; i--){ %>
+				<%if(paintings.findIndex(painting => painting.order == i) != -1){%>
+					<%if(paintings[paintings.findIndex(painting => painting.order == i)]._id == "674af6df8d29ed03b0b71727"){%>
+						<div class="grid-item grid-large">
+					<% }else if(paintings[paintings.findIndex(painting => painting.order == i)]._id == "674b429c8d29ed03b0b719c7"){%>
+						<div class="grid-item grid-medium">
+					<% }else if(paintings[paintings.findIndex(painting => painting.order == i)]._id == "674b287f8d29ed03b0b717ef"){%>
+						<div class="grid-item grid-medium">
+					<% }else if(paintings[paintings.findIndex(painting => painting.order == i)]._id == "674c400859c99b01b5a1a114"){%>
+						<div class="grid-item grid-medium">
+					<% }else if(paintings[paintings.findIndex(painting => painting.order == i)]._id == "674c8ad868fdf303dc81f48f"){%>
+						<div class="grid-item grid-medium">
+					<% }else if(paintings[paintings.findIndex(painting => painting.order == i)]._id == "674b2db58d29ed03b0b71888"){%>
+						<div class="grid-item grid-medium">
+					<% }else{ %>
+						<div class="grid-item">
+					<% } %>
+							<a href="/painting/<%=paintings[paintings.findIndex(painting => painting.order == i)]._id%>">
+								<% for(let img of paintings[paintings.findIndex(painting => painting.order == i)].image_small) { %>
+								<img style="width: 100%; height:auto" src="<%=img.url%>" alt="" />
+								<% } %>
+								<% if(currentUser){ %>
+								<div class="number"><%=String(paintings[paintings.findIndex(painting => painting.order == i)].order)%></div>
+								<%}%>
+							</a>
+						</div>
 				<% } %>
-			</section>
-
-			<a href="/" class="button btn--action" style="background: transparent"><span>Back</span></a>
+			<% } %>
+			
+		</div>
+		<a href="/gallery" class="button big btn-back inverted" style="background-size:33em;margin: 1em 0 3em 4em; position: static"></a>
 	</div>
 			
-<%-include("partials/footer")%>
+<%-include("partials/footer-index")%>

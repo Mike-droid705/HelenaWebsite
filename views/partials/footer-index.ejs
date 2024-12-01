@@ -1,0 +1,49 @@
+<!-- Footer -->
+	<div class="footer-img">
+			<div id="wrapper" style="padding: 1em 0 1em 0">
+				<footer class="container py-5" style="padding-bottom: 0!important; padding-top: 0!important">
+					<div class="row">
+						<div class="col-6 col-md">
+							<h5 id="white-text">Categories</h5>
+							<ul class="list-unstyled text-small" style="margin: 0; font-size: 17px">
+								<li><a class="text-muted" href="/type/drawing" id="white-text">Drawings</a></li>
+								<li><a class="text-muted" href="/type/painting" id="white-text">Paintings</a></li>
+							</ul>
+						</div>
+						<div class="col-6 col-md">
+							<h5 id="white-text">Other</h5>
+							<ul class="list-unstyled text-small" style="margin: 0; font-size: 17px">
+								<li><a class="text-muted" href="/bio" id="white-text">Bio</a></li>
+								<li><a class="text-muted" href="/contact" id="white-text">Contact</a></li>
+							</ul>
+						</div>
+					</div>
+				</footer>
+
+			</div>
+	</div>
+			
+
+		<!-- Scripts -->
+		<script src="/js/jquery.min.js"></script>
+		<script src="/js/skel.min.js"></script>
+		<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+		<script src="/js/imagesLoaded.js"></script>
+		<script>
+			var $grid = $('.grid').masonry({
+				itemSelector: '.grid-item',
+				columnWidth: '.grid-item',
+				fitWidth: true
+			});
+			$grid.imagesLoaded().progress( function() {
+			  $grid.masonry('layout');
+			});
+		</script>
+
+		
+	</body>
+</html>

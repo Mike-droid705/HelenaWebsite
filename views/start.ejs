@@ -1,58 +1,43 @@
 <%-include("partials/header")%>
 <!-- Header -->
-	<header id="header" class="alt slideshow" style="min-height: 100vh">
+	<header id="header" class="alt slideshow homepage" style="min-height: 100svh">
 		<div class="inner">
-			<h1>
+			<a href="/gallery" >
+				<img class="signature" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFKwEnWadLctU6eT-XI_ohGijJ7keM6jI61TWoIjsAUjhs6IeOE-PjUAVem8ciOsQonCyBj3chqSLAN3fRrsF2ILk0KEa0-umND0v2FCvhCrn5m-IUvT06uSWrGdfXxDWPtCcoUi151S6QEDrNb9Hh4gsO1QFjJhyRi-BvTMYGUlRWiEJXMD6KX8DfbG73/s16000/IMG_0323.PNG">
+			</a>
+			<!-- <h1>
 				Helena Blagojević
-			</h1>
+			</h1> -->
+			<% if(currentUser){ %>
+				<div style="text-align: center; margin-bottom: 6rem">
+					<a style="background-color:white" class="button" href="/createPainting">Create New Painting</a>
+				</div>
+			<%}%>
 		</div>
 	</header>
 
-	
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/util.js"></script>
+	<script src="/js/main.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
 
-<!-- Wrapper -->
-	<div id="wrapper">
+	<script>
+	$(".signature").hover(
+		function () {
+			console.log("hover");
+			$('#header').get(0).style.setProperty('--tdelay', '0s');
+			$('#header').get(0).style.setProperty('--t', 'background-color 0.6s ease');
+			$('#header').get(0).style.setProperty('--bgcolor', 'rgba(0, 0, 0, 0.7)');
+		},
+		function () {
+			$('#header').get(0).style.setProperty('--bgcolor', 'rgba(0, 0, 0, 0.25)');
+		}
+	);
+	</script>
 
-			<% if(currentUser){ %>
-				<div style="text-align: center; margin-bottom: 6rem">
-					<a class="button" href="/createPainting">Create New Painting</a>
-				</div>
-			<%}%>
-		<!-- Banner -->
-			<section id="intro" class="main">
-				<h2>Artist Statement</h2>
-				<p>My artwork is represented mostly through the insect world, specifically portraying praying mantis in all
-				their various shapes and forms, allowing me to experiment with the project by taking their piercing
-				eyes to my advantage in painting, drawing and lithography. In this experiment my goal is to show
-				human’s psychologhy as well as physical appearance through this particular insect, painting them
-				strongly in vivid colors while moving through bigger canvases. The tehniques I mostly use are soft
-				pastel, oil and charcoal.</p>
-			</section>
-		<!-- Items -->
-			<section class="main items">
-				<article class="item shadow"  id="fixed-width">
-					<header style="height: 22em">
-						<a href="/type/oil"><img class="fixed " style="margin-top: -10%" src="https://blogger.googleusercontent.com/img/a/AVvXsEiAUALgOVC887kU8mxth7o4Izb0RWawba6Av9FB9wWqIEt70qwOqL4vjUIp4ExYFPygc7MI4-oD3QYH3K4rU6GQog2vbzU-QzcvymN2Yu_Tlwv5nXujV8m-nbeTilxRpVsemVtExXoVa4AAmz-QZk_ktOYfN0wLxmBTVVA10itJJTxqNtm-Mlo3SbloWw=s16000" alt="" /></a>
-						<h3 class="text-shadow" style="font-family: 'Courgette', cursive;">Oil</h3>
-					</header>
-				</article>
-				<article class="item shadow"  id="fixed-width">
-					<header style="height: 22em">
-						<a href="/type/charcoal"><img class="fixed " style="margin-top: -24px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7rroCAh7wbym0QIxVe3T-gSNOoYfvUUxNaxkvRyMQk4pIRiuKIHT8xQcGLX8vBTVlmQyDdyOXEDlaaR-RYsaNiN-1JFTjO3uRlDrNkAhgT4P6wU-Ft9TmixhDvArc8uE1qkJEfDdjLAu4cBQhmSFJ7UI1ePXnvf2Q6zw7f0-ne-trHTD4rl9-cbxS4A/s16000/viber_image_2022-05-30_22-34-00.jpg" alt="" /></a>
-						<h3 class="text-shadow" style="font-family: 'Courgette', cursive;">Charcoal</h3>
-					</header>
-				</article>
-				<article class="item shadow"  id="fixed-width">
-					<header style="height: 22em">
-						<a href="/type/softpastel"><img class="fixed " style="margin-top: -14%" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjbjRrCbefNhMKP44lG5o-F9Y_auUkv20qRW7VcD_I2jefq_RuCRG8DLeUzYk2K3bdBcBE6S1oU0qZtBhA8aWhhV9MJPZwuXRFFXYC9UE2oUK_YqeJS85X_1QIgjrINemcI2GtHvGCoUGAP3s4zLPLQFZuKz0Z1uicGONVS6FZtUxeg3-fw0t9hVodh8A/s16000/viber_image_2022-05-30_22-33-05.jpg" alt="" /></a>
-						<h3 class="text-shadow" style="font-family: 'Courgette', cursive;">Soft Pastel</h3>
-					</header>
-				</article>
-			</section>
-			</div>
-
-			<script src="/js/jquery.min.js"></script>
-			<script src="/js/skel.min.js"></script>
-			<script src="/js/util.js"></script>
-			<script src="/js/main.js"></script>
-<%-include("partials/footer")%>
+	</body>
+</html>

@@ -4,6 +4,7 @@ var addZoom = function (target) {
       imgsrc = imgsrc.backgroundImage.slice(4, -1).replace(/"/g, ""),
       img = new Image();
 	
+	var lbimage = document.getElementById("lb-img")
   img.src = imgsrc;
   img.onload = function () {
     var imgWidth = img.naturalWidth,
@@ -13,14 +14,15 @@ var addZoom = function (target) {
 	}else{
 		var ratio = imgWidth / imgHeight
 	}
-	var percentage = ratio * 100 + '%';
+	var percentage = ratio * 50 + '%';
 
     container.onmousemove = function (e) {
-      var boxWidth = container.clientWidth,
+      var boxWidth = lbimage.clientWidth,
+		  boxHeight = lbimage.clientHeight,
           xPos = e.pageX - this.offsetLeft,
           yPos = e.pageY - this.offsetTop,
           xPercent = xPos / (boxWidth / 100) + '%',
-          yPercent = yPos / (boxWidth * ratio / 100) + '%';
+          yPercent = yPos / (boxHeight / 100) + '%';
 	
 		if(imgWidth < imgHeight){
 			Object.assign(container.style, {
@@ -38,12 +40,12 @@ var addZoom = function (target) {
     container.onmouseleave = function (e) {
       Object.assign(container.style, {
         backgroundPosition: 'center',
-        backgroundSize: 'cover'
+        backgroundSize: 'contain'
       });
     };
   }
 };
 
 window.addEventListener("load", function(){
-  addZoom("zoom-img");
+  addZoom("magnify");
 });

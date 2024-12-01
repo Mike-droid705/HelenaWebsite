@@ -16,14 +16,15 @@
 			<form action="/painting/<%=painting._id%>?_method=PUT" method="POST">
 				<input type="text" name="name" placeholder="name" value="<%=painting.name%>"><br>
 				<input type="text" name="image" placeholder="name" value="<%=painting.image[0].url%>"><br>
-				<input type="text" name="surface" placeholder="surface" value="<%=painting.surface%>"><br>
+				<input type="text" name="image_small" placeholder="name" value="<%=painting.image_small[0].url%>"><br>
+				<input type="text" name="technique" placeholder="technique" value="<%=painting.technique%>"><br>
 				<input type="text" name="dimensions" placeholder="dimensions" value="<%=painting.dimensions%>"><br>
 				<select name="category">
-					<option value="oil" <%=painting.category === 'oil' ? 'selected': ' '%>>oil</option>
-					<option value="charcoal" <%=painting.category === 'charcoal' ? 'selected': ' '%>>charcoal</option>
-					<option value="softpastel" <%=painting.category === 'softpastel' ? 'selected': ' '%>>softpastel</option>
+					<option value="drawing" <%=painting.category === 'drawing' ? 'selected': ' '%>>drawing</option>
+					<option value="painting" <%=painting.category === 'painting' ? 'selected': ' '%>>painting</option>
 				</select><br>
 				<input type="text" name="year" placeholder="year" value="<%=painting.year%>"><br>
+				<input type="number" name="order" placeholder="order" value="<%=painting.order%>"><br>
 				<button>
 					Submit
 				</button>

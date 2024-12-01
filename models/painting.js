@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const paintingSchema = new mongoose.Schema({
+	order:{
+		type: Number,
+		required: true
+	},
 	name: {
 		type: String,
 		required: true
@@ -11,7 +15,13 @@ const paintingSchema = new mongoose.Schema({
 			filename: String
 		}
 	],
-	surface: {
+	image_small: [
+		{
+			url: String,
+			filename: String
+		}
+	],
+	technique: {
 		type: String,
 		required: true
 	},
@@ -22,7 +32,7 @@ const paintingSchema = new mongoose.Schema({
 	category: {
 		type: String,
 		lowercase: true,
-		enum: ['acrylic', 'oil', 'charcoal', 'softpastel']
+		enum: ['drawing', 'painting']
 	},
 	year: {
 		type: String,

@@ -1,55 +1,77 @@
 <%-include("partials/header")%>
-<!-- Header -->
-	<!-- <header id="header" class="alt">
-		<div class="inner">
-			<img src="https://1.bp.blogspot.com/-i0cwBbkLKdo/YCwUxFEZaiI/AAAAAAAAAlY/_zgaK92z0Zsalfz00eLVwtzTuB0YTUdnQCLcBGAsYHQ/w400-h203/logo2.png" alt="" />
-			<h1></h1>
-		</div>
-	</header> -->
 
 <!-- Wrapper -->
-	<div id="wrapper">
+	<% if(paintings[index].category == "drawing"){%>
+	<div style="min-height: 100vh; background-attachment:fixed; background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrWnz9WRIedadTcbwK-JHoHt4c4kRf0c0ScBcxQDysqoF2yN2Vjf9oS2uCZbcndzA7wsp24a7XxmTW3wZHnqRSe7n1CodW4iSV8LxAIn5ZiMAV2kN48gTsDnOjrOLG8arhyNST1tU5jYd2Q4qdAuOFFUpRjxLWckIFR9i70QMYzFYTCg3vjpgcerpFRrHC/s16000/drawings-paper1.JPG');">
+	<%}else if(paintings[index].category == "painting"){%>
+	<div style="min-height: 100vh; background-attachment:fixed; background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEht7C2VKoUS7_SYc2fJAzZskX5QlW9G8RmjdxJaW-xXrcwz8YDkaTZQYAgqgY-HTcDdpBtAkopiylbOiitCH79zCaSHWL-TPc3oCXAt-KikYirj6xL6IdLA-eKtbwm320H7nnZm6y0QMtmkc7LEylqNugrKZnsJbzWl_pWcXu0vxByqs2xRWbuGTsRrywWq/s16000/paintings-paper1.JPG');">
+	<%}%>
+		<div id="wrapper" class="show-wrapper">
+			<section class="main items">
+				<!-- container1 -->
+				<article class="show item show-item1 show-container" id="showItem" style="padding: 3em 0 1em 0">
+					<% if(forward_painting != -1){%>
+						<div class="arrow"><a href="/painting/<%=paintings[forward_painting]._id%>" class="button btn-arrow left" style="background-size:7em;"></a></div>
+					<%}else{%>
+						<div class="arrow"></div>
+					<%}%>
+					
+					<% for(let img of paintings[index].image) { %>
+					<img class="show-image zoomD" id="zoom-img" style="background-image: url('<%=img.url%>')" src="<%=img.url%>">
+					<%}%>
 
-		<!-- <section class="main items">
-			<article class="item"> -->
-				<header>
-				</header>
-				<section class="main items">
-					<article class="show item" id="showItem">
-						<% for(let img of painting.image) { %>
-							<div class="shadow show-image zoomD" id="zoom-img" style="background-image: url('<%=img.url%>')" src="<%=img.url%>"></div>
-						<% } %>
-					</article>
-					<article class="show item">
-						<ul class="actions">
-							<li style="color: red"><%=painting.stock%></li><br>
-							<h3 style="margin: 0;"><%=painting.name%></h3>
-							<li>- original work <%=painting.dimensions%></li><br>
-							<li>- <%=painting.category%> on <%=painting.surface%></li><br>
-							<li>- made in year <%=painting.year%></li><br>
-						</ul>
-						<% if(currentUser){ %>
-						<form action="/painting/<%=painting._id%>?_method=DELETE" method="POST">
-							<button>
-								Delete
-							</button>
-						</form>
-						<form action="/painting/stock/<%=painting._id%>?_method=PUT" method="POST">
-							<input type="hidden" name="stock" value="Out of Stock">
-							<button>
-								Mark as Out of Stock
-							</button>
-						</form>
-						<a class="button" href="/painting/<%=painting._id%>/edit">Edit</a>
-						<% } %>
-					</article>
-				</section>
-				<div id="lb-back">
-			  		<div id="lb-img"></div>
-				</div>
-			<!-- </article>
-		</section> -->
-		<a href="/type/<%=painting.category%>" class="button btn--action" style="background: transparent"><span>Back</span></a>
-		<script src="/js/zoom.js"></script>
+					<% if(back_painting >= 0){%>
+						<div class="arrow"><a href="/painting/<%=paintings[back_painting]._id%>" class="button btn-arrow right" style="background-size:7em;"></a></div>
+					<%}%>
+				</article>
+				<!-- container2 -->
+				<article class="show item show-item2" style="position: relative;">
+					<img style="width: 15em; height:12em" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj2qdCEqQgwAUPRPikmwRhyphenhyphenX0n1ZIclh543VkSqiirYmFxzeNqoZuxypb-DNALapzT_LXI0422hFYBmH8XATBfDHuyy_YGjEmXgCtIZwXtQMT1Ue-lmbvdf4cIDMOvaVwO-c8Bk4p9i9Sv8owof0ZVMkeO8-rqPojoseUik64B95TVcVcwV0JGRahH7UQLi/w640-h412/detail-show.PNG">
+					<ul class="actions show-font show-text">
+						<h3 class="show-font" style="margin: 0; font-size: 2.25em"><%=paintings[index].name%></h3>
+						<li>- dimensions: <%=paintings[index].dimensions%></li>
+						<li>- <%=paintings[index].technique%></li>
+						<li>- made in year <%=paintings[index].year%></li><br>
+					</ul>
+					
+					<div class="arrow-container">
+						<!-- <% if(index-1 >= 0){%>
+							<div class="arrow-phone"><a href="/painting/<%=paintings[index-1]._id%>" class="button btn-arrow left" style="background-size:7em;"></a></div>
+						<%}%>
+						<% if(index+1 < paintings.length){%>
+							<div class="arrow-phone"><a href="/painting/<%=paintings[index+1]._id%>" class="button btn-arrow right" style="background-size:7em;"></a></div>
+						<%}%> -->
+						
+						
+						<% if(back_painting >= 0){%>
+							<div class="arrow-phone"><a href="/painting/<%=paintings[back_painting]._id%>" class="button btn-arrow left" style="background-size:7em;"></a></div>
+						<%}%>
+						<% if(forward_painting != -1){%>
+							<div class="arrow-phone"><a href="/painting/<%=paintings[forward_painting]._id%>" class="button btn-arrow right" style="background-size:7em;"></a></div>
+						<%}%>
+						
+					</div>
+					
+					<!-- signedin -->
+					<% if(currentUser){ %>
+					<form action="/painting/<%=paintings[index]._id%>?_method=DELETE" method="POST">
+						<button>
+							Delete
+						</button>
+					</form>
+					<a class="button" href="/painting/<%=paintings[index]._id%>/edit">Edit</a>
+					<div style="font-size: 2em; color: black; font-weight: 500"><%=String(paintings[index].order)%></div>
+					<% } %>
+				</article>
+				
+			</section>
+			<div id="lb-back" style="z-index: 1032">
+				<div id="lb-img"></div>
+			</div>
+		<!-- </article>
+	</section> -->
+			<script src="/js/zoom.js"></script>
+		</div>
+		<a href="/type/<%=paintings[index].category%>" class="button big btn-back black" style="background-size:33em; position: relative; bottom: 2em; left: 2em;"></a>
 	</div>
 <%-include("partials/footer-show")%>
