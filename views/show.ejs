@@ -1,3 +1,9 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title><%=paintings[index].name%> | Helena Blagojević Website</title>
+		<meta name="description" content="An artwork made by the artist Helena Blagojević.">
+		
 <%-include("partials/header")%>
 
 <!-- Wrapper -->
@@ -17,7 +23,7 @@
 					<%}%>
 					
 					<% for(let img of paintings[index].image) { %>
-					<img class="show-image zoomD" id="zoom-img" style="background-image: url('<%=img.url%>')" src="<%=img.url%>">
+					<img alt="Artwork of Helena Blagojevic, name:<%=paintings[index].name%>, dimensions: <%=paintings[index].dimensions%>, technique: <%=paintings[index].technique%>, made in year: <%=paintings[index].year%>" class="show-image zoomD" id="zoom-img" style="background-image: url('<%=img.url%>')" src="<%=img.url%>">
 					<%}%>
 
 					<% if(back_painting >= 0){%>

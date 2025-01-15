@@ -1,3 +1,14 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<% if(paintings[0].category == "drawing"){%>
+		<title>Drawings | Helena Blagojević Website</title>
+		<meta name="description" content="A collection of diverse artistic renderings of Helena Blagojević.">
+		<%}else{%>
+		<title>Paintings | Helena Blagojević Website</title>
+		<meta name="description" content="An exquisite collection of diverse paintings by Helena Blagojević showcases her mastery of color, emotion, and artistic expression.">
+		<%}%>
+
 <%-include("partials/header")%>
 <!-- Header -->
 	<% if(paintings[0].category == "drawing"){%>
@@ -7,9 +18,9 @@
 	<%}%>
 		<div class="inner">
 			<% if(paintings[0].category == "drawing"){%>
-				<img class="title" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdRjtkaB-CeB6pFok4569aU91-kJ6vSnMpR9cKjk0EMwvDk4UNsr3iRZe2lJXR78iGuGf4vRjKN0R6P90MOqv2pIu2WRCc6BR19kjcUil-ErevSJ_SBHdpcgdcAj8xhCgMYHY3qawJEwuu4nC_i3KawQBRMWuG0zRpbW30vqNidv_fMsHvo0_eqBDlcwtD/s16000/Drawings_title.PNG">
+				<img class="title" alt="Title of page" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdRjtkaB-CeB6pFok4569aU91-kJ6vSnMpR9cKjk0EMwvDk4UNsr3iRZe2lJXR78iGuGf4vRjKN0R6P90MOqv2pIu2WRCc6BR19kjcUil-ErevSJ_SBHdpcgdcAj8xhCgMYHY3qawJEwuu4nC_i3KawQBRMWuG0zRpbW30vqNidv_fMsHvo0_eqBDlcwtD/s16000/Drawings_title.PNG">
 			<%}else{%>
-				<img class="title" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFkhHFjoN6hDenWLknIAiwnTafn3RYfF0jcHxxv4MAWQK-WI980QfUKQt3AxBUoXsA1pTC1wLUj-qekpWKIR0yODhXmzRtLSvygHzr6Ufav4uaT1mhlguoCsBE91JgPZPX6fFBPdwmfhohOpDM3kmncRYFiEVV1dMLUUbIj25iN0pwoi7SPC-JMlpOYBGq/s16000/Paintings_title.PNG">
+				<img class="title" alt="Title of page" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFkhHFjoN6hDenWLknIAiwnTafn3RYfF0jcHxxv4MAWQK-WI980QfUKQt3AxBUoXsA1pTC1wLUj-qekpWKIR0yODhXmzRtLSvygHzr6Ufav4uaT1mhlguoCsBE91JgPZPX6fFBPdwmfhohOpDM3kmncRYFiEVV1dMLUUbIj25iN0pwoi7SPC-JMlpOYBGq/s16000/Paintings_title.PNG">
 			<%}%>
 		</div>
 			
@@ -37,7 +48,7 @@
 					<% } %>
 							<a href="/painting/<%=paintings[paintings.findIndex(painting => painting.order == i)]._id%>">
 								<% for(let img of paintings[paintings.findIndex(painting => painting.order == i)].image_small) { %>
-								<img style="width: 100%; height:auto" src="<%=img.url%>" alt="" />
+								<img style="width: 100%; height:auto" src="<%=img.url%>" alt="Artwork by Helena Blagojevic" />
 								<% } %>
 								<% if(currentUser){ %>
 								<div class="number"><%=String(paintings[paintings.findIndex(painting => painting.order == i)].order)%></div>
